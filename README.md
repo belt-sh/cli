@@ -104,6 +104,7 @@ belt skill use user/repo --skill frontend-design       # pick skill from multi-s
 # install persistently (auto-detects agents)
 belt skill add namespace/skill-name                    # all detected agents
 belt skill add namespace/skill-name --agent claude-code
+belt skill add namespace/skill-name --local            # project-local (.agents/skills/, committable)
 belt skill add namespace/skill-name --dir ./my-skills  # custom directory
 belt skill list                                        # list installed
 belt skill remove namespace/skill-name                 # uninstall
@@ -112,7 +113,7 @@ belt skill remove namespace/skill-name                 # uninstall
 belt skill upload ./my-skill
 ```
 
-`use` outputs the skill to stdout — the agent consumes it on demand, nothing written to disk. `add` installs persistently by auto-detecting agents (`~/.claude/`, `~/.cursor/`, `~/.windsurf/`).
+`use` outputs the skill to stdout — the agent consumes it on demand, nothing written to disk. `add` installs persistently by auto-detecting agents (`~/.claude/`, `~/.cursor/`, `~/.windsurf/`). use `--local` to install into the project (`.agents/skills/`) so it's committed to git and shared with the team.
 
 ### connectors (mcp)
 
