@@ -95,12 +95,18 @@ belt skill search "image generation"    # search registry
 belt skill store                        # browse store
 belt skill store --featured             # featured skills
 
-belt skill add namespace/skill-name     # install a skill
-belt skill add ns/skill --agent claude  # install for specific agent
-belt skill list                         # list installed
+belt skill install namespace/skill-name                # auto-detects agents, installs for all
+belt skill install namespace/skill-name --agent claude-code  # specific agent
+belt skill install namespace/skill-name --agent cursor       # cursor
+belt skill install namespace/skill-name --dir ./my-skills    # custom directory
+belt skill list                                        # list installed
+belt skill remove namespace/skill-name                 # uninstall
 
 belt skill upload ./my-skill            # publish to registry
+belt skill use namespace/skill-name     # one-shot use without installing
 ```
+
+agent auto-detection: belt checks for `~/.claude/`, `~/.cursor/`, `~/.windsurf/` and installs to all detected agents. use `--agent` to target one specifically.
 
 ### connectors (mcp)
 

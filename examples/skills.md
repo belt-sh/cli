@@ -19,17 +19,28 @@ belt skill get namespace/skill-name
 
 ## installing skills
 
-```bash
-# install for claude code
-belt skill add namespace/skill-name
-belt skill add namespace/skill-name --agent claude
+belt auto-detects which agents you have installed (`~/.claude/`, `~/.cursor/`, `~/.windsurf/`) and installs skills for all of them.
 
-# install for cursor
-belt skill add namespace/skill-name --agent cursor
+```bash
+# install for all detected agents
+belt skill install namespace/skill-name
+
+# install for a specific agent
+belt skill install namespace/skill-name --agent claude-code
+belt skill install namespace/skill-name --agent cursor
+belt skill install namespace/skill-name --agent windsurf
+
+# install to a custom directory
+belt skill install namespace/skill-name --dir ./my-skills
 
 # list installed
 belt skill list
+
+# remove
+belt skill remove namespace/skill-name
 ```
+
+supported agents: `claude-code`, `cursor`, `windsurf`
 
 ## creating skills
 
