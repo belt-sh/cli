@@ -17,21 +17,42 @@ belt skill store --featured
 belt skill get namespace/skill-name
 ```
 
-## installing skills
+## using skills (on-demand)
 
-belt auto-detects which agents you have installed (`~/.claude/`, `~/.cursor/`, `~/.windsurf/`) and installs skills for all of them.
+`belt skill use` fetches a skill and outputs it to stdout — no local install, keeps your system clean. the agent consumes it directly.
+
+```bash
+# from the belt store
+belt skill use inferencesh/web-search
+
+# from github (full url)
+belt skill use github.com/anthropics/courses/tree/main/prompt-eng
+
+# from github (shorthand — tries store first, then github.com/user/repo)
+belt skill use okaris/my-skill
+
+# pick a specific skill from a multi-skill repo
+belt skill use github.com/anthropics/skills --skill frontend-design
+
+# pipe into a file if needed
+belt skill use inferencesh/web-search > SKILL.md
+```
+
+## installing skills (persistent)
+
+`belt skill add` installs locally. auto-detects which agents you have (`~/.claude/`, `~/.cursor/`, `~/.windsurf/`) and writes to all of them.
 
 ```bash
 # install for all detected agents
-belt skill install namespace/skill-name
+belt skill add namespace/skill-name
 
 # install for a specific agent
-belt skill install namespace/skill-name --agent claude-code
-belt skill install namespace/skill-name --agent cursor
-belt skill install namespace/skill-name --agent windsurf
+belt skill add namespace/skill-name --agent claude-code
+belt skill add namespace/skill-name --agent cursor
+belt skill add namespace/skill-name --agent windsurf
 
 # install to a custom directory
-belt skill install namespace/skill-name --dir ./my-skills
+belt skill add namespace/skill-name --dir ./my-skills
 
 # list installed
 belt skill list
@@ -40,7 +61,14 @@ belt skill list
 belt skill remove namespace/skill-name
 ```
 
-supported agents: `claude-code`, `cursor`, `windsurf`
+## supplementary files
+
+skills can include extra files (references, scripts, etc.):
+
+```bash
+belt skill files inferencesh/web-search           # list files
+belt skill view inferencesh/web-search refs/api.md  # view a file
+```
 
 ## creating skills
 

@@ -95,18 +95,24 @@ belt skill search "image generation"    # search registry
 belt skill store                        # browse store
 belt skill store --featured             # featured skills
 
-belt skill install namespace/skill-name                # auto-detects agents, installs for all
-belt skill install namespace/skill-name --agent claude-code  # specific agent
-belt skill install namespace/skill-name --agent cursor       # cursor
-belt skill install namespace/skill-name --dir ./my-skills    # custom directory
+# use on-demand (no install, keeps system clean)
+belt skill use namespace/skill-name                    # from store
+belt skill use github.com/user/repo                    # from github
+belt skill use github.com/user/repo/tree/main/path     # specific path
+belt skill use user/repo --skill frontend-design       # pick skill from multi-skill repo
+
+# install persistently (auto-detects agents)
+belt skill add namespace/skill-name                    # all detected agents
+belt skill add namespace/skill-name --agent claude-code
+belt skill add namespace/skill-name --dir ./my-skills  # custom directory
 belt skill list                                        # list installed
 belt skill remove namespace/skill-name                 # uninstall
 
-belt skill upload ./my-skill            # publish to registry
-belt skill use namespace/skill-name     # one-shot use without installing
+# publish
+belt skill upload ./my-skill
 ```
 
-agent auto-detection: belt checks for `~/.claude/`, `~/.cursor/`, `~/.windsurf/` and installs to all detected agents. use `--agent` to target one specifically.
+`use` outputs the skill to stdout — the agent consumes it on demand, nothing written to disk. `add` installs persistently by auto-detecting agents (`~/.claude/`, `~/.cursor/`, `~/.windsurf/`).
 
 ### connectors (mcp)
 

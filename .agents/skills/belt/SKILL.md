@@ -50,11 +50,17 @@ types: `skill`, `concept`, `observation`, `reference`, `preference`
 ```bash
 belt skill search "deployment"            # search registry
 belt skill store --featured               # browse featured
-belt skill install namespace/skill-name   # auto-detects agents, installs for all
-belt skill install ns/name --agent claude-code  # install for specific agent
-belt skill install ns/name --dir ./skills # install to custom dir
+
+# use on-demand (no install, stdout)
+belt skill use namespace/skill-name       # from store
+belt skill use github.com/user/repo       # from github
+belt skill use user/repo --skill name     # pick from multi-skill repo
+
+# install persistently
+belt skill add namespace/skill-name       # auto-detects agents
+belt skill add ns/name --agent claude-code
 belt skill list                           # list installed
-belt skill use namespace/skill-name       # one-shot use without installing
+
 belt skill upload ./my-skill              # publish
 ```
 
