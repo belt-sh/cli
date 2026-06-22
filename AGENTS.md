@@ -6,14 +6,14 @@ this file provides context for any ai agent (claude, cursor, copilot, etc.) work
 
 belt is a cli that gives agents access to:
 
-1. **250+ ai apps** — image generation (flux, sdxl), video (veo, seedance), audio (tts, music), llms (claude, gpt, gemini), search (tavily, exa), 3d, and more
+1. **250+ ai apps** — image generation (gpt-image, reve, pruna), video (veo, seedance), audio (tts, music), llms (claude, gemini), search (tavily, exa), 3d, and more
 2. **knowledge system** — persistent memory that survives across sessions. save observations, concepts, skills, references
 3. **skill registry** — reusable agent workflows. search, install, publish
 4. **mcp connectors** — connect to any mcp-compatible service through the platform
 
 ## when to use belt
 
-- **generating media**: `belt app search "image"` → `belt app run fal/flux-pro --input '{"prompt": "..."}'`
+- **generating media**: `belt app search "image"` → `belt app run openai/gpt-image-2 --input '{"prompt": "..."}'`
 - **remembering something**: `belt know create - --name finding --type observation <<< "learned X"`
 - **looking for a workflow**: `belt skill search "deploy"` or `belt suggest "how to do X"`
 - **connecting to services**: `belt mcp connect slack` → `belt mcp run slack send_message`

@@ -32,8 +32,8 @@ VERSION=v1.11.1 curl -fsSL cli.inference.sh | sh
 belt login                    # authenticate
 belt me                       # check who you are
 
-belt app search "flux"        # find ai apps
-belt app run fal/flux-pro     # run one
+belt app search "image"            # find ai apps
+belt app run openai/gpt-image-2    # run one
 
 belt know search "react"      # search your knowledge
 belt skill search "deploy"    # find skills
@@ -163,7 +163,7 @@ or use belt directly from any agent via shell:
 
 ```bash
 belt suggest "what tool should i use for image upscaling"
-belt app run fal/real-esrgan --input '{"image_url": "..."}'
+belt app run pruna/p-image-upscale --input '{"image_url": "..."}'
 belt know search "api patterns"
 ```
 

@@ -19,15 +19,16 @@ belt me
 ### apps — run 250+ ai models
 
 ```bash
-belt app search "flux"                    # find apps
-belt app get fal/flux-pro                 # view schema
-belt app sample fal/flux-pro --save in.json  # generate sample input
-belt app run fal/flux-pro --input in.json    # run it
-belt app run fal/flux-pro --input '{"prompt": "..."}' --save output.png
+belt app search "image"                      # find apps
+belt app get openai/gpt-image-2              # view schema
+belt app sample openai/gpt-image-2 --save in.json  # generate sample input
+belt app run openai/gpt-image-2 --input in.json    # run it
+belt app run openai/gpt-image-2 --input '{"prompt": "..."}' --save output.png
 ```
 
 common apps:
-- image: `fal/flux-pro`, `fal/real-esrgan` (upscale)
+- image: `openai/gpt-image-2`, `reve/create`, `pruna/p-image`
+- upscale/edit: `pruna/p-image-upscale`, `pruna/p-image-edit`
 - video: `google/veo-2`, `seedance/seedance-2-i2v`
 - search: `tavily/search`, `exa/search`
 - audio: `elevenlabs/tts`

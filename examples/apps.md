@@ -6,18 +6,21 @@ belt gives you access to 250+ ai apps from your terminal. no api keys to manage 
 
 ```bash
 # search for image models
-belt app search "flux"
-belt app search "stable diffusion"
+belt app search "image"
 
 # check what inputs a model needs
-belt app get fal/flux-pro
-belt app sample fal/flux-pro
+belt app get openai/gpt-image-2
+belt app sample openai/gpt-image-2
 
 # generate an image
-belt app run fal/flux-pro --input '{"prompt": "a neon city at night, cyberpunk style", "image_size": "landscape_16_9"}'
+belt app run openai/gpt-image-2 --input '{"prompt": "a neon city at night, cyberpunk style"}'
+
+# or use other providers
+belt app run reve/create --input '{"prompt": "a neon city at night, cyberpunk style"}'
+belt app run pruna/p-image --input '{"prompt": "a neon city at night, cyberpunk style"}'
 
 # upscale
-belt app run fal/real-esrgan --input '{"image_url": "https://..."}'
+belt app run pruna/p-image-upscale --input '{"image_url": "https://..."}'
 ```
 
 ## video generation
@@ -60,9 +63,9 @@ belt app search "music generation"
 
 ```bash
 # generate sample input, modify it, run
-belt app sample fal/flux-pro --save input.json
+belt app sample openai/gpt-image-2 --save input.json
 # edit input.json...
-belt app run fal/flux-pro --input input.json
+belt app run openai/gpt-image-2 --input input.json
 
 # use jq to process results
 belt app run tavily/search --input '{"query": "..."}' --json | jq '.results[].url'
