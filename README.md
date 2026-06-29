@@ -4,12 +4,12 @@ the cloud platform cli for ai agents. run 250+ ai apps, manage knowledge, search
 
 **~4mb binary. no runtime, no dependencies. installs in under a second.**
 
-built with go. ships as a single static binary per platform — no node, no python, no containers. just `curl | sh` and you're running.
+built with go. ships as a single static binary per platform — no node, no python, no containers.
 
 ## install
 
 ```bash
-curl -fsSL cli.inference.sh | sh
+curl -fsSL https://cli.inference.sh -o /tmp/belt-install.sh && sh /tmp/belt-install.sh
 ```
 
 package managers:
@@ -23,7 +23,7 @@ scoop bucket add inference https://github.com/inference-sh/scoop-bucket && scoop
 pin a version:
 
 ```bash
-VERSION=v1.11.1 curl -fsSL cli.inference.sh | sh
+VERSION=v1.11.1 curl -fsSL https://cli.inference.sh -o /tmp/belt-install.sh && sh /tmp/belt-install.sh
 ```
 
 ## quick start

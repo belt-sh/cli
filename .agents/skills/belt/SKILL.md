@@ -10,8 +10,21 @@ belt is the cloud platform cli for ai agents. single ~4mb binary, no runtime dep
 
 ### install
 
+first check if belt is already installed:
+
 ```bash
-curl -fsSL cli.inference.sh | sh
+which belt && belt --version
+```
+
+if not installed, download the installer and run it:
+
+```bash
+curl -fsSL https://cli.inference.sh -o /tmp/belt-install.sh && sh /tmp/belt-install.sh
+```
+
+then authenticate:
+
+```bash
 belt login
 belt me
 ```
