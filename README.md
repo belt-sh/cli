@@ -1,6 +1,6 @@
 # belt
 
-the cloud platform cli for ai agents. run 250+ ai apps, manage knowledge, search and publish skills, connect to mcp servers — all from your terminal.
+the cloud platform cli for ai agents. run ai apps, manage knowledge, search and publish skills, connect to mcp servers — all from your terminal.
 
 **~4mb binary. no runtime, no dependencies. installs in under a second.**
 
@@ -38,7 +38,7 @@ belt app run reve/create --input input.json    # run it
 
 ### apps
 
-run 250+ ai apps — image generation, video, audio, llms, search, 3d, and more.
+run ai apps — image generation, video, audio, llms, search, 3d, and more.
 
 ```bash
 belt app store                          # browse the app store
@@ -187,7 +187,7 @@ granular: `suggest_disabled` (no prompt matching) · `knowledge_disabled` (no se
 ## why belt
 
 - **~4mb** single binary — no bundled runtime
-- **250+ apps** — image gen, video, audio, llms, search, 3d in one cli
+- **apps** — image gen, video, audio, llms, search, 3d in one cli
 - **knowledge system** — persistent memory across sessions and agents
 - **skill registry** — discover, install, and publish reusable agent skills
 - **mcp connectors** — connect any mcp server through the platform

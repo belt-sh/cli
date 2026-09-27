@@ -1,6 +1,6 @@
 # running ai apps
 
-belt gives you access to 250+ ai apps from your terminal. no api keys to manage per-provider — one `belt login` and you can run anything.
+belt gives you access to ai apps from your terminal. no api keys to manage per-provider — one `belt login` and you can run anything.
 
 ## image generation
 
