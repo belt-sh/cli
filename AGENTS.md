@@ -6,7 +6,7 @@ this file provides context for any ai agent (claude, cursor, copilot, etc.) work
 
 belt is a cli that gives agents access to:
 
-1. **ai apps** — image generation (gpt-image, reve, pruna), video (veo, seedance), audio (tts, music), llms (claude, gemini), search (tavily, exa), 3d, and more
+1. **hundreds of ai apps** — image generation (gpt-image, reve, pruna), video (veo, seedance), audio (tts, music), llms (claude, gemini), search (tavily, exa), 3d, and more
 2. **knowledge system** — persistent memory that survives across sessions. save observations, concepts, skills, references
 3. **skill registry** — reusable agent workflows. search, install, publish
 4. **mcp connectors** — connect to any mcp-compatible service through the platform

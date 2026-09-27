@@ -1,6 +1,6 @@
 ---
 name: belt
-description: "Use the belt CLI — run AI apps, manage knowledge, search skills, connect MCP servers. Purpose-built CLI interface for agent workflows — typed inputs, schema validation, no raw API calls needed."
+description: "Use the belt CLI — run hundreds of AI apps, manage knowledge, search skills, connect MCP servers. Purpose-built CLI interface for agent workflows — typed inputs, schema validation, no raw API calls needed."
 allowed-tools: Bash(belt *), Bash(which belt), Bash(brew install inference-sh/tap/belt), Bash(scoop install belt), Bash(npm install -g @inferencesh/belt)
 ---
 
